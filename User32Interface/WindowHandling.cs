@@ -34,7 +34,9 @@ namespace User32Interface
         }
         public static bool SetAsForegroundWindow(IntPtr Handle)
         {
-            return SetForegroundWindow(Handle);
+            if(GetForegroundWindow() != Handle)
+                return SetForegroundWindow(Handle);
+            return false; 
         }
     }
 }
