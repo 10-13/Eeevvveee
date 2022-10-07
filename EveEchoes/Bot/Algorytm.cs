@@ -9,8 +9,8 @@ namespace EveEchoes.Bot
     internal interface IAlgorytm
     {
         //massive of requested data
-        public bool Start(object[] parmas);
-        public Task StartAsync(object[] parmas);
+        public bool Start();
+        public Task StartAsync();
         public Type[] GetParamsTypes();
     }
 }
