@@ -46,12 +46,21 @@ namespace EveEchoes
                 if (source.ContainsPoint(AutoType.Build(ControlType.Armor, c).ToString()))
                     if (Visual.GetDiffrenc(target.GetPointColor(source.GetPointByName(AutoType.Build(ControlType.Armor, c).ToString()))) < 10)
                         if (int.TryParse(c.ToString().Substring(c.ToString().Length - 3), out int res))
-                            if (Sheild < res)
-                                Sheild = res;
+                            if (Armor < res)
+                                Armor = res;
+            int Hull = 0;
+            foreach (CountebleType c in typeof(CountebleType).GetEnumValues())
+                if (source.ContainsPoint(AutoType.Build(ControlType.Hull, c).ToString()))
+                    if (Visual.GetDiffrenc(target.GetPointColor(source.GetPointByName(AutoType.Build(ControlType.Hull, c).ToString()))) < 10)
+                        if (int.TryParse(c.ToString().Substring(c.ToString().Length - 3), out int res))
+                            if (Hull < res)
+                                Hull = res;
             if (this.Sheild != Sheild)
                 this.Sheild = Sheild;
             if (this.Armor != Armor)
                 this.Armor = Armor;
+            if (this.Armor != Hull)
+                this.Armor = Hull;
         }
     }
 }
